@@ -421,13 +421,20 @@ function parseStyleToObject(str) {
 		// Google Maps
 
 	});
-	var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('ba-map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+	 function initMap() {
+        var myLatLng = {lat: 49.5874995, lng: 34.5594644};
+
+        var map = new google.maps.Map(document.getElementById('ba-map'), {
+          zoom: 14,
+          center: myLatLng
         });
-    }
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Sugaring Room'
+        });
+      }
 	window.addEventListener('load', initMap);
 })(jQuery);
 
